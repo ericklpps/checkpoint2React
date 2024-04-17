@@ -36,7 +36,7 @@ fetchUsuarios();
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-4">2- Lista de Usuários</h1>
+      <h1 className="text-4xl font-bold mb-4">2- Lista de Usuários</h1>
         <div className="rounded-md overflow-hidden border border-black">
           <table className="w-full">
             <thead>
