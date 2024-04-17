@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
+//interface post para definir o que será exibido da api e os tipos que receberão
 interface Post {
   id: number;
   title: string;
   body: string;
 }
-
+//definindo o posts e fazendo um try/catch
 const Posts: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([]);
 
@@ -24,15 +25,15 @@ useEffect(() => {
 
 fetchPosts();
 }, []);
-
+//retornando o que irá exibir e o hashmap para coletar as informações da api
 return (
-  <div className="bg-red-100 p-4"> {/* Fundo vermelho claro */}
-    <h1 className="text-2xl font-bold mb-4">1- Lista de Posts</h1> {/* Maior tamanho de texto e negrito */}
+  <div className="bg-red-100 p-4">
+    <h1 className="text-2xl font-bold mb-4">1- Lista de Posts</h1>
     <ul>
       {posts.map((post, index) => (
-        <li key={index} className="mb-4"> {/* Adiciona margem inferior para separar os posts */}
-          <h2 className="text-lg font-bold">{post.title}</h2> {/* Negrito */}
-          <p className="text-base">{post.body}</p> {/* Tamanho de texto menor */}
+        <li key={index} className="mb-4"> 
+          <h2 className="text-lg font-bold">{post.title}</h2> 
+          <p className="text-base">{post.body}</p> 
         </li>
 ))};
     </ul>

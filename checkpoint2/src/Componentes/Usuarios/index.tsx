@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
+
+//interface post para definir o que será exibido da api e os tipos que receberão
+//Nesse caso, criei duas diferentes pois o address é composto por mais informações
 interface Address {
   street: String;
   suite: String;
@@ -13,6 +16,7 @@ interface Usuario {
   address: Address;
 }
 
+//Try catch para consultar a api, e caso de erro, exibir o mesmo
 const Usuarios: React.FC = () => {
   const [usuarios, setUsuarios] = useState<Usuario[]>([]);
     useEffect(() => {
@@ -46,6 +50,7 @@ fetchUsuarios();
               </tr>
             </thead>
               <tbody>
+                {/*Criando um return que traz um título e um hashmap que retorna os usuarios e da um índice a eles */}
                 {usuarios.map((usuario, index) => (
                   <tr key={index}>
                     <td className="border border-black px-4 py-2">{usuario.name}</td>
@@ -55,7 +60,7 @@ fetchUsuarios();
                     <td className="border border-black px-4 py-2">{usuario.address.city}</td>
                     <td className="border border-black px-4 py-2">{usuario.address.zipcode}</td>
                   </tr>
-))}
+))}   
               </tbody>
         </table>
       </div>

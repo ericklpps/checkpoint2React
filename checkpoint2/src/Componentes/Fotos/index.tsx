@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+
+//definindo função ao Fotos, verificando em um try/catch
 const Fotos: React.FC = () => {
   const [photos, setPhotos] = useState<any[]>([]);
 
@@ -14,13 +16,12 @@ useEffect(() => {
         setPhotos(data);
       } catch (error) {
         console.error('Erro ao buscar fotos:', error);
-}
-};
+}};
 
 fetchPhotos();
 }, []);
 
-  {/*Criando um return que traz um título e um hashmap que retorna as fotos e da um índice a elas */}
+/*Criando um return que traz um título e um hashmap que retorna as fotos e da um índice a elas */
 return (
   <div className="bg-red-100 p-4"> 
     <h1 className="text-3xl font-bold mb-4">3- Galeria de Fotos</h1>

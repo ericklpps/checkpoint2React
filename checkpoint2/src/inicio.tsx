@@ -1,5 +1,6 @@
 import React from 'react';
 
+//Criando o inicio, é o que será exibido no começo do site
 const Inicio: React.FC = () => {
     return (
         <div className="bg-red-100 p-4 text-center rounded-lg">
